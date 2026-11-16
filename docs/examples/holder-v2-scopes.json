@@ -1,0 +1,7 @@
+{"title": "Example bet: Holder v2", "date": "week 2 of 3",
+ "scopes": [
+  {"name": "Flat end stops", "position": 85},
+  {"name": "Round body option", "position": 55},
+  {"name": "Snap-clip lid", "position": 30},
+  {"name": "Docs and photos", "position": 10}
+ ]}

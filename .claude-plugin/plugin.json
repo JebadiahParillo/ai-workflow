@@ -1,0 +1,9 @@
+{
+  "name": "ai-workflow",
+  "version": "2.0.0",
+  "description": "Idea-to-shipped workflow skills: harness setup, reality checks, hardening, unattended-run preflight, ship checklist, retros, hardware loop and a monthly workflow update.",
+  "author": {
+    "name": "Jebadiah Parillo"
+  },
+  "license": "MIT"
+}

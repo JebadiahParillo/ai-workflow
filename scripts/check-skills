@@ -1,0 +1,104 @@
+#!/usr/bin/env python3
+"""Lint this repo's skills and the commands WORKFLOW.md names.
+
+Fails when:
+- a SKILL.md lacks frontmatter, a name matching its folder, or a description
+- a description is over 1024 characters (Agent Skills limit) or a body over 500 lines
+- two skills share a name
+- WORKFLOW.md, README.md or a skill names a /command that is neither one of
+  this repo's skills nor listed in scripts/known-commands.txt
+- a JSON template doesn't parse, or a shell template has a syntax error
+- a script has CRLF line endings
+Prints only problems, then a one-line summary.
+"""
+import json
+import pathlib
+import re
+import subprocess
+import sys
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+problems = []
+
+
+def frontmatter(text):
+    if not text.startswith("---\n"):
+        return None, text
+    end = text.find("\n---", 4)
+    if end == -1:
+        return None, text
+    fields = {}
+    for line in text[4:end].splitlines():
+        m = re.match(r"^([A-Za-z_-]+):\s*(.*)$", line)
+        if m:
+            fields[m.group(1)] = m.group(2).strip()
+    return fields, text[end + 4:]
+
+
+skills = {}
+for path in sorted((ROOT / "skills").glob("*/SKILL.md")):
+    rel = path.relative_to(ROOT)
+    fields, body = frontmatter(path.read_text())
+    if fields is None:
+        problems.append(f"{rel}: no frontmatter")
+        continue
+    name = fields.get("name", "")
+    if name != path.parent.name:
+        problems.append(f"{rel}: name '{name}' doesn't match folder '{path.parent.name}'")
+    desc = fields.get("description", "")
+    if not desc:
+        problems.append(f"{rel}: missing description")
+    elif len(desc) > 1024:
+        problems.append(f"{rel}: description is {len(desc)} characters (max 1024)")
+    lines = body.count("\n")
+    if lines > 500:
+        problems.append(f"{rel}: body is {lines} lines (max 500)")
+    if name in skills:
+        problems.append(f"{rel}: duplicate skill name '{name}'")
+    skills[name] = rel
+
+known = set()
+known_file = ROOT / "scripts" / "known-commands.txt"
+for line in known_file.read_text().splitlines():
+    line = line.split("#", 1)[0].strip()
+    if line:
+        known.add(line.lstrip("/"))
+
+docs = [ROOT / "WORKFLOW.md", ROOT / "README.md", *sorted((ROOT / "skills").glob("*/SKILL.md"))]
+command = re.compile(r"`/([a-z][a-z0-9-]*(?::[a-z0-9-]+)?)")
+for doc in docs:
+    for n, line in enumerate(doc.read_text().splitlines(), 1):
+        for m in command.finditer(line):
+            cmd = m.group(1)
+            base = cmd.split(":")[-1] if cmd.startswith(("ai-workflow:", "mattpocock-skills:")) else cmd
+            if base not in skills and cmd not in known and base not in known:
+                problems.append(f"{doc.relative_to(ROOT)}:{n}: unknown command /{cmd}")
+
+for tpl in (ROOT / "skills").glob("*/templates/*.json"):
+    try:
+        json.loads(tpl.read_text())
+    except json.JSONDecodeError as e:
+        problems.append(f"{tpl.relative_to(ROOT)}: invalid JSON ({e})")
+for manifest in (ROOT / ".claude-plugin").glob("*.json"):
+    try:
+        json.loads(manifest.read_text())
+    except json.JSONDecodeError as e:
+        problems.append(f"{manifest.relative_to(ROOT)}: invalid JSON ({e})")
+
+for sh in [*(ROOT / "skills").glob("*/templates/*.sh"), ROOT / "scripts" / "check"]:
+    r = subprocess.run(["bash", "-n", str(sh)], capture_output=True, text=True)
+    if r.returncode != 0:
+        problems.append(f"{sh.relative_to(ROOT)}: shell syntax error: {r.stderr.strip()}")
+
+# Windows checkouts with core.autocrlf can turn LF into CRLF, which breaks bash
+# and shebangs. .gitattributes forces LF; this catches a checkout made before it.
+for f in [ROOT / "scripts" / "check", ROOT / "scripts" / "check-skills",
+          *(ROOT / "skills").glob("*/templates/*.sh"), *(ROOT / "skills").glob("*/scripts/*.py")]:
+    if b"\r\n" in f.read_bytes():
+        problems.append(f"{f.relative_to(ROOT)}: CRLF line endings; run "
+                        "'git rm --cached -r -q . && git reset --hard' after .gitattributes is committed")
+
+for p in problems:
+    print(p)
+print(f"check-skills: {len(skills)} skills, {len(problems)} problem(s)")
+sys.exit(1 if problems else 0)
