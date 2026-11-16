@@ -16,7 +16,8 @@ repo; never overwrite an existing file without showing the diff first.
 2. **`scripts/check`.** From `templates/check.sh`. Fill `QUICK` with the fast
    steps (typecheck, lint, unit tests for touched code) and `FULL` with
    everything CI runs. Quiet on success, failures only. Make it executable and
-   run it both ways.
+   run it both ways. On repos used from Windows, add a `.gitattributes` with
+   `* text=auto eol=lf` so scripts keep LF endings and run in bash and WSL.
 3. **CLAUDE.md.** Start from `templates/CLAUDE.md`, or prune the existing one
    (`/init` can draft it). Keep only what Claude can't find by reading the
    repo: commands, misleading code, decisions made elsewhere, anything already

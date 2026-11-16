@@ -403,4 +403,5 @@ Cadence:
 | Hardware untested until printed | Print a test piece early; plan a "first print feedback" ticket |
 | Fragile shell heredocs | Write files with the editor tool; keep scripts in the repo |
 | Token-heavy sessions | The token budget above |
+| Scripts failed in WSL after a Windows checkout (CRLF line endings) | `.gitattributes` forces LF; `scripts/check-skills` flags CRLF scripts |
 | v1 named the ticket skill `to-issues`; the installed skill is `/to-tickets` | `scripts/check-skills` fails when WORKFLOW.md names a skill that doesn't exist |

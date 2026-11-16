@@ -8,6 +8,7 @@ Fails when:
 - WORKFLOW.md, README.md or a skill names a /command that is neither one of
   this repo's skills nor listed in scripts/known-commands.txt
 - a JSON template doesn't parse, or a shell template has a syntax error
+- a script has CRLF line endings
 Prints only problems, then a one-line summary.
 """
 import json
@@ -88,6 +89,14 @@ for sh in [*(ROOT / "skills").glob("*/templates/*.sh"), ROOT / "scripts" / "chec
     r = subprocess.run(["bash", "-n", str(sh)], capture_output=True, text=True)
     if r.returncode != 0:
         problems.append(f"{sh.relative_to(ROOT)}: shell syntax error: {r.stderr.strip()}")
+
+# Windows checkouts with core.autocrlf can turn LF into CRLF, which breaks bash
+# and shebangs. .gitattributes forces LF; this catches a checkout made before it.
+for f in [ROOT / "scripts" / "check", ROOT / "scripts" / "check-skills",
+          *(ROOT / "skills").glob("*/templates/*.sh"), *(ROOT / "skills").glob("*/scripts/*.py")]:
+    if b"\r\n" in f.read_bytes():
+        problems.append(f"{f.relative_to(ROOT)}: CRLF line endings; run "
+                        "'git rm --cached -r -q . && git reset --hard' after .gitattributes is committed")
 
 for p in problems:
     print(p)
