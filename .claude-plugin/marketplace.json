@@ -1,0 +1,13 @@
+{
+  "name": "ai-workflow",
+  "owner": {
+    "name": "Jebadiah Parillo"
+  },
+  "plugins": [
+    {
+      "name": "ai-workflow",
+      "source": "./",
+      "description": "Idea-to-shipped workflow skills for Claude Code."
+    }
+  ]
+}

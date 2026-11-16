@@ -1,0 +1,53 @@
+# Commands WORKFLOW.md may name that are not skills in this repo.
+# One per line. /workflow-update checks these still exist each month.
+
+# Matt Pocock's skills (github.com/mattpocock/skills)
+setup-matt-pocock-skills
+grilling
+grill-me
+grill-with-docs
+domain-modeling
+to-spec
+to-tickets
+wayfinder
+research
+prototype
+implement
+implement-spec
+tdd
+codebase-design
+code-review
+diagnosing-bugs
+improve-codebase-architecture
+triage
+handoff
+retro
+pr
+writing-for-agents
+
+# Claude Code built-in commands (code.claude.com/docs)
+init
+doctor
+goal
+loop
+schedule
+batch
+verify
+ultrareview
+usage
+clear
+compact
+rewind
+btw
+effort
+model
+context
+sandbox
+permissions
+hooks
+remote-control
+fewer-permission-prompts
+plugin
+
+# Anthropic skills
+skill-creator

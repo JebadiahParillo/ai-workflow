@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This repo's own check: the skills lint. CI runs the same command.
+set -uo pipefail
+cd "$(dirname "$0")/.."
+exec python3 scripts/check-skills
