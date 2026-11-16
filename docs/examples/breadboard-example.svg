@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" font-family="Arial, sans-serif" aria-label="Breadboard example: remapping a pedal button">
+<rect width="960" height="420" fill="#F6F4EE"/>
+<text x="40" y="44" font-size="22" font-weight="700" fill="#161B26">Example breadboard: remap a pedal button</text>
+<text x="40" y="70" font-size="15" fill="#4A5568">Places are underlined; affordances sit under them; arrows show where an affordance leads. No layout, no styling.</text>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#E07A2E"/></marker></defs>
+<g font-size="18" fill="#161B26">
+<text x="40" y="130" font-weight="700">Configurator</text><line x1="40" y1="136" x2="160" y2="136" stroke="#161B26" stroke-width="2"/>
+<text x="40" y="170">pedal list</text>
+<text x="40" y="200">“Remap” on a pedal</text>
+<text x="370" y="130" font-weight="700">Remap dialog</text><line x1="370" y1="136" x2="500" y2="136" stroke="#161B26" stroke-width="2"/>
+<text x="370" y="170">gesture: tap / hold / double</text>
+<text x="370" y="200">action picker</text>
+<text x="370" y="230">“Save to pedal”</text>
+<text x="370" y="260">“Cancel”</text>
+<text x="720" y="130" font-weight="700">Pedal</text><line x1="720" y1="136" x2="780" y2="136" stroke="#161B26" stroke-width="2"/>
+<text x="720" y="170">LED blinks twice</text>
+<text x="720" y="200">new mapping active</text>
+</g>
+<g stroke="#E07A2E" stroke-width="3" fill="none" marker-end="url(#a)">
+<path d="M215,195 C280,195 300,135 360,128"/>
+<path d="M515,225 C600,225 640,135 710,128"/>
+<path d="M450,262 C380,340 120,320 90,215"/>
+</g>
+<text x="40" y="370" font-size="15" fill="#4A5568">Open question surfaced by the breadboard: what happens if the pedal is disconnected when “Save to pedal” is pressed?</text>
+</svg>

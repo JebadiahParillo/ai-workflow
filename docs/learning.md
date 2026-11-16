@@ -27,6 +27,8 @@ badge is not a certification.
 
 ## 3. Practitioners
 
+- Ryan Singer, [Shape Up](https://basecamp.com/shapeup) (free online book from Basecamp): the process this workflow's stages follow. Read Part 1 (shaping) and the hill charts chapter first.
+
 - Simon Willison, [Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/): red/green TDD, "first run the tests", anti-patterns, code is cheap but good code isn't.
 - Mitchell Hashimoto, [My AI Adoption Journey](https://mitchellh.com/writing/my-ai-adoption-journey): reproduce your own work, end-of-day agents, harness engineering.
 - Kent Beck, [Augmented Coding: Beyond the Vibes](https://www.kentbeck.com/summaries/augmented-coding-beyond-the-vibes/): TDD as the guardrail; watch for disabled tests and unasked-for complexity.

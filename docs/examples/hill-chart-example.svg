@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" aria-label="Hill chart: Example bet: Holder v2" font-family="Arial, sans-serif">
+<rect width="960" height="420" fill="#F6F4EE"/>
+<text x="60" y="40" font-size="22" font-weight="700" fill="#161B26">Example bet: Holder v2</text>
+<text x="900" y="40" font-size="16" fill="#4A5568" text-anchor="end">week 2 of 3</text>
+<polyline points="60.0,327.6 68.4,327.1 76.8,326.5 85.2,325.9 93.6,325.1 102.0,324.3 110.4,323.3 118.8,322.1 127.2,320.8 135.6,319.3 144.0,317.7 152.4,315.8 160.8,313.6 169.2,311.3 177.6,308.7 186.0,305.7 194.4,302.5 202.8,299.0 211.2,295.2 219.6,291.0 228.0,286.5 236.4,281.6 244.8,276.4 253.2,270.8 261.6,264.8 270.0,258.6 278.4,252.0 286.8,245.1 295.2,237.9 303.6,230.5 312.0,222.9 320.4,215.1 328.8,207.2 337.2,199.2 345.6,191.2 354.0,183.3 362.4,175.4 370.8,167.7 379.2,160.2 387.6,153.1 396.0,146.2 404.4,139.8 412.8,133.9 421.2,128.6 429.6,123.8 438.0,119.7 446.4,116.2 454.8,113.5 463.2,111.6 471.6,110.4 480.0,110.0 488.4,110.4 496.8,111.6 505.2,113.5 513.6,116.2 522.0,119.7 530.4,123.8 538.8,128.6 547.2,133.9 555.6,139.8 564.0,146.2 572.4,153.1 580.8,160.2 589.2,167.7 597.6,175.4 606.0,183.3 614.4,191.2 622.8,199.2 631.2,207.2 639.6,215.1 648.0,222.9 656.4,230.5 664.8,237.9 673.2,245.1 681.6,252.0 690.0,258.6 698.4,264.8 706.8,270.8 715.2,276.4 723.6,281.6 732.0,286.5 740.4,291.0 748.8,295.2 757.2,299.0 765.6,302.5 774.0,305.7 782.4,308.7 790.8,311.3 799.2,313.6 807.6,315.8 816.0,317.7 824.4,319.3 832.8,320.8 841.2,322.1 849.6,323.3 858.0,324.3 866.4,325.1 874.8,325.9 883.2,326.5 891.6,327.1 900.0,327.6" fill="none" stroke="#161B26" stroke-width="3"/>
+<line x1="480.0" y1="90" x2="480.0" y2="340" stroke="#9AA3B2" stroke-dasharray="6 6"/>
+<text x="270.0" y="375" font-size="16" fill="#4A5568" text-anchor="middle">Figuring things out</text>
+<text x="690.0" y="375" font-size="16" fill="#4A5568" text-anchor="middle">Making it happen</text>
+<line x1="144.0" y1="317.7" x2="154.0" y2="299.7" stroke="#E07A2E" stroke-width="1.5"/>
+<circle cx="144.0" cy="317.7" r="11" fill="#E07A2E" stroke="#F6F4EE" stroke-width="3"/>
+<text x="154.0" y="295.7" font-size="16" fill="#161B26" text-anchor="start" stroke="#F6F4EE" stroke-width="5" paint-order="stroke">Docs and photos</text>
+<line x1="312.0" y1="222.9" x2="322.0" y2="182.9" stroke="#3B82C4" stroke-width="1.5"/>
+<circle cx="312.0" cy="222.9" r="11" fill="#3B82C4" stroke="#F6F4EE" stroke-width="3"/>
+<text x="322.0" y="178.9" font-size="16" fill="#161B26" text-anchor="start" stroke="#F6F4EE" stroke-width="5" paint-order="stroke">Snap-clip lid</text>
+<line x1="522.0" y1="119.7" x2="512.0" y2="57.7" stroke="#2E8B57" stroke-width="1.5"/>
+<circle cx="522.0" cy="119.7" r="11" fill="#2E8B57" stroke="#F6F4EE" stroke-width="3"/>
+<text x="512.0" y="53.7" font-size="16" fill="#161B26" text-anchor="end" stroke="#F6F4EE" stroke-width="5" paint-order="stroke">Round body option</text>
+<line x1="774.0" y1="305.7" x2="764.0" y2="287.7" stroke="#8E44AD" stroke-width="1.5"/>
+<circle cx="774.0" cy="305.7" r="11" fill="#8E44AD" stroke="#F6F4EE" stroke-width="3"/>
+<text x="764.0" y="283.7" font-size="16" fill="#161B26" text-anchor="end" stroke="#F6F4EE" stroke-width="5" paint-order="stroke">Flat end stops</text>
+</svg>

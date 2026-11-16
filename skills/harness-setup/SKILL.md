@@ -35,7 +35,10 @@ repo; never overwrite an existing file without showing the diff first.
    that moves.
 7. **Worktrees.** List small gitignored files a fresh checkout needs in
    `.worktreeinclude`; put the install command in CLAUDE.md.
-8. **Matt's skills.** Run `/setup-matt-pocock-skills` if not done.
+8. **Matt's skills and the tracker.** Run `/setup-matt-pocock-skills` if not
+   done. Run `/tracker-sync` to write `.claude/tracker.md` (GitHub Issues,
+   YouTrack or Basecamp) and confirm the connector can read one item. Give
+   it the least access the work needs; tokens stay in the connector or CLI.
 9. **Prove it.** Ask for a change that breaks the check and confirm the Stop
    hook sends Claude back. Ask Claude to read `.env` and confirm it is denied.
    Run `/doctor`.

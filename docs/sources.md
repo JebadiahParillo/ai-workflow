@@ -24,3 +24,6 @@ dated section here each month.
 | Learning-while-shipping habits | Anthropic skill-formation RCT, Jan 2026 |
 | Measure time, don't trust the feeling | METR 2025 study and its Feb 2026 update |
 | Hardware-in-the-loop as the firmware check | arXiv 2307.03817; Agentic HIL and IAR write-ups |
+| Shape Up phases, appetite, breadboards, fat-marker sketches, rabbit holes, pitch, betting table, circuit breaker, scopes, hill charts | Ryan Singer, [Shape Up](https://basecamp.com/shapeup) (Basecamp) |
+| YouTrack remote MCP: endpoint, OAuth or permanent token, tools, `readOnlyTools`/`toolSubsets`, YouTrack 2025.3+ | [YouTrack MCP server docs](https://www.jetbrains.com/help/youtrack/cloud/model-context-protocol-server.html) |
+| Basecamp CLI with MCP server (`basecamp mcp`, `--read-only`, `--domains`) and agent skill (`basecamp setup claude`) | [basecamp/basecamp-cli README](https://github.com/basecamp/basecamp-cli) |

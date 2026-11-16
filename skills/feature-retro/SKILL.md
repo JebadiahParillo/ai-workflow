@@ -1,19 +1,21 @@
 ---
 name: feature-retro
-description: Short retrospective after a feature merges. Records what slipped, which stage should have caught it, time and cost per stage, then hardens the harness and updates WORKFLOW.md and CHANGELOG.md in the ai-workflow repo. Use at the end of every feature or release.
+description: Short retrospective after a bet ships or its circuit breaker fires. Records what slipped, which stage should have caught it, time and cost per stage, then hardens the harness and updates WORKFLOW.md and CHANGELOG.md in the ai-workflow repo. Use at the end of every feature or release.
 ---
 
 # Feature retro
 
-Run on Sonnet at low effort, in a fresh session. Inputs: the spec issue, its
-review findings, `git log` for the feature, and `/usage` for the period. Don't
+Run on Sonnet at low effort, in a fresh session. Inputs: the pitch and spec, review findings,
+the hill chart snapshots, `git log` for the bet, bugs filed against it in the
+tracker, and `/usage` for the period. Don't
 read the code.
 
-1. Answer in at most six lines:
+1. Answer in at most seven lines:
    - What slipped, and its cause.
    - Which stage should have caught it.
    - What worked and is worth keeping.
-   - Rough time per stage, and what cost the most tokens.
+   - Rough time per stage against the appetite, and what cost the most tokens.
+   - Did the bet ship inside its appetite? If the circuit breaker fired, why.
    - Any unattended run: was its output usable?
    - Anything you did by hand that you'd now delegate, or the reverse.
 2. For each slip, run `/harden` so it can't recur the same way.

@@ -19,5 +19,7 @@ Report a table of pass/fail; stop at the first failure that blocks shipping.
 - [ ] Docs match the change (`/docs-sync` if user-facing behaviour changed).
 - [ ] CI is green on the PR (`gh pr checks`); `main` has branch protection.
 - [ ] Release assets come from CI, not a local build.
+- [ ] Tracker items for this work are linked to the PR or release; they close
+      only after merge (`/tracker-sync`).
 - [ ] Public steps (deploys, releases, posts, package publishes) are listed
       for the user to approve. Never run them without that approval.
